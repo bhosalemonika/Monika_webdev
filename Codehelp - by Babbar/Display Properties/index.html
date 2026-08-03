@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Property</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .inline-div {
+      display: inline;
+      background-color: lightcoral;
+    }
+
+    .block-span {
+      display: block;
+      background-color: lightgreen;
+      width: 300px;
+      height: 50px;
+      margin: 10px 0;
+    }
+
+    .inline-block-demo {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="inline-div">Div 1 (Inline)</div>
+  <div class="inline-div">Div 2 (Inline)</div>
+
+  <span class="block-span">Span 1 (Converted to Block)</span>
+
+  <div class="inline-block-demo">Inline-Block Box 1</div>
+  <div class="inline-block-demo">Inline-Block Box 2</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position Property</title>
+  <style>
+    .parent-container {
+      position: relative; 
+      width: 100%;
+      height: 1500px;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    .box {
+      width: 150px;
+      height: 100px;
+      margin: 10px;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    .relative-box {
+      position: relative;
+      top: 20px;
+      left: 50px;
+      background-color: dodgerblue;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 100px;
+      right: 20px;
+      background-color: crimson;
+    }
+
+    .fixed-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: darkgreen;
+      border-radius: 50px;
+    }
+
+    .sticky-box {
+      position: sticky;
+      top: 10px;
+      background-color: orange;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent-container">
+    <div class="box relative-box">Relative Position</div>
+    <div class="box absolute-box">Absolute Position</div>
+    <div class="box sticky-box">Sticky Header</div>
+    <div class="box fixed-box">Fixed Floating Action</div>
+  </div>
+</body>
+</html>

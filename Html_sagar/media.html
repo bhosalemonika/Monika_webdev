@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>HTML Media Elements</title>
+</head>
+<body>
+
+    <h3>Audio Player Example</h3>
+    <audio controls preload="metadata">
+        <source src="song.mp3" type="audio/mpeg">
+        <source src="song.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <hr>
+
+    <h3>Video Player Example</h3>
+    <video controls width="400" height="240" poster="poster_image.jpg">
+        <source src="sample_video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+
+    <hr>
+
+    <h3>Embedded YouTube Video</h3>
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/zysUIv0-xak" 
+        title="HTML Full Course by Sagar Chouksey" 
+        frameborder="0"  
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+
+</body>
+</html>

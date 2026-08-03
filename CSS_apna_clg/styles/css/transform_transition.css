@@ -1,0 +1,33 @@
+.box {
+  width: 120px;
+  height: 100px;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  font-family: Arial, sans-serif;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease;
+}
+
+.translate-box:hover {
+  background-color: #e74c3c;
+  transform: translateX(50px);
+}
+
+
+.rotate-box:hover {
+  background-color: #2ecc71;
+  transform: rotate(45deg);
+}
+
+.scale-box:hover {
+  background-color: #f1c40f;
+  transform: scale(1.3);
+}
+
+.skew-box:hover {
+  background-color: #9b59b6;
+  transform: skew(20deg, 10deg);
+}

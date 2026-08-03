@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D & 3D Transforms</title>
+  <style>
+    .stage {
+      perspective: 800px;
+      display: flex;
+      gap: 40px;
+      padding: 50px;
+    }
+
+    .card-3d {
+      width: 150px;
+      height: 150px;
+      background-color: #34495e;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      transition: transform 0.6s ease;
+    }
+
+    .card-rotate:hover {
+      transform: rotateY(180deg); 
+    }
+
+    .card-translate:hover {
+      transform: translate3d(20px, -20px, 100px);
+    }
+
+    .card-scale:hover {
+      transform: scale3d(1.2, 1.2, 1.5);
+    }
+
+    .card-skew:hover {
+      transform: skew(15deg, 10deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="card-3d card-rotate">3D Rotate Y</div>
+    <div class="card-3d card-translate">3D Translate</div>
+    <div class="card-3d card-scale">3D Scale</div>
+    <div class="card-3d card-skew">2D Skew</div>
+  </div>
+</body>
+</html>

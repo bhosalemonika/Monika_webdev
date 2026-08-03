@@ -1,0 +1,24 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+#content {
+  height: 500px;
+}
+
+.content-box {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  display: inline-block;
+}

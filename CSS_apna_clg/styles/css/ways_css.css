@@ -1,0 +1,21 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: green;
+}
+
+#heading1 {
+  color: red;
+}
+
+.my-class {
+  color: blue;
+}
+
+.para {
+  color: purple;
+}

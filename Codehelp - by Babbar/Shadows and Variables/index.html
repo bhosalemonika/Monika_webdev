@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadows & Variables</title>
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.2);
+    }
+
+    body {
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 10px 20px 0px var(--shadow-color);
+      text-align: center;
+    }
+
+    .card-title {
+      color: var(--primary-color);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="card-title">Shadow & Variable Demo</h1>
+    <p>Clean elevation with CSS variables and shadows.</p>
+  </div>
+</body>
+</html>

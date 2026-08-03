@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro & Selectors</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    p {
+      color: brown;
+    }
+
+    #article1 {
+      background-color: green;
+      color: white;
+    }
+
+    .para-class {
+      background-color: yellow;
+    }
+
+    p, article {
+      max-width: 500px;
+    }
+
+    p.para-class {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="main-heading">Welcome to CodeHelp</h1>
+
+  <p style="background-color: yellow; color: black;">
+    This paragraph uses Inline CSS.
+  </p>
+
+  <p class="para-class">First Paragraph with Class Selector</p>
+  <p class="para-class">Second Paragraph with Class Selector</p>
+  <p>Third Paragraph without Class</p>
+
+  <article id="article1">
+    This article uses ID Selector (#article1).
+  </article>
+
+</body>
+</html>

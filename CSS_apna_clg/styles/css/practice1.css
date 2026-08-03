@@ -1,0 +1,29 @@
+
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#box {
+  background-color: blue;
+}
+
+.heading {
+  color: red;
+}
+
+#btn {
+  background-color: green;
+}
+
+#main-heading {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#outer {
+  font-size: 25px;
+}
+
+#inner {
+  font-size: 10px;
+}
