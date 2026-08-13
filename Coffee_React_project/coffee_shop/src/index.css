@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #4b2e2e;
+  color: white;
+}
+
+.coffee-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px;
+}
+
+.coffee-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
