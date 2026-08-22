@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    background-color: pink;
+    padding: 20px;
+    width: 100%;
+    height: 10%;
+}
+.unorderlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 30px;
+    font-size: 10px;
+    color: black;
+ 
+    
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
+.college{
+    text-align: center;
+    
+}
+
+
+.college .link{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    margin:10px
+}
