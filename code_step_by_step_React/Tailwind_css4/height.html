@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Height</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="p-5 bg-gray-100">
+
+    <h1 class="text-3xl font-bold mb-8">
+        Tailwind CSS Height
+    </h1>
+
+    <div class="h-20 bg-blue-500 text-white p-3 mb-4">
+        h-20 → Height: 80px
+    </div>
+
+    <div class="h-40 bg-green-500 text-white p-3 mb-4">
+        h-40 → Height: 160px
+    </div>
+
+    <div class="h-60 bg-yellow-400 p-3 mb-4">
+        h-60 → Height: 240px
+    </div>
+
+    <div class="h-1/2 bg-purple-500 text-white p-3 mb-4">
+        h-1/2 → 50% height
+    </div>
+
+    <div class="h-screen bg-black text-white p-5 mb-4">
+        h-screen → 100vh / Full Screen Height
+    </div>
+
+    <div class="h-full bg-red-500 text-white p-5 mb-4">
+        h-full → 100% of parent height
+    </div>
+
+    <div class="min-h-40 bg-orange-500 text-white p-5 mb-4">
+        min-h-40 → Minimum Height
+    </div>
+
+    <div class="max-h-40 overflow-auto bg-pink-500 text-white p-5 mb-4">
+        max-h-40 → Maximum Height
+        <br><br>
+        This content can scroll when it exceeds the maximum height.
+        <br><br>
+        More content...
+        <br><br>
+        More content...
+    </div>
+
+
+    <div class="h-20 hover:h-40 bg-indigo-500 text-white p-3 mb-4">
+        Hover me → h-20 becomes h-40
+    </div>
+
+</body>
+</html>
