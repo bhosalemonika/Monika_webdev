@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "firstName": "Priya",
+      "lastName": "Sharma",
+      "age": "64",
+      "id": "3"
+    },
+    {
+      "firstName": "Monika",
+      "lastName": "Bhosale",
+      "age": "23",
+      "id": "B7wnZbnWf_4"
+    },
+    {
+      "firstName": "Yash ",
+      "lastName": "Bapat",
+      "age": "23",
+      "id": "-nsHxLrHoMQ"
+    },
+    {
+      "firstName": "RADHA",
+      "lastName": "RANE",
+      "age": "23",
+      "id": "2A6j9BPpOVM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

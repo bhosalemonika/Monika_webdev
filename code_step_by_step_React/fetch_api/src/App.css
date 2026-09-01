@@ -1,0 +1,13 @@
+.user-list{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-size:20px;
+  font-weight: 900;
+}
+.user-list-names{
+  display: flex;
+    font-weight: 400;
+    justify-content: space-around;
+     list-style: none;
+}
