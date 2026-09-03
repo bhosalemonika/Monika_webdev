@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "name": "APEX AURA",
+        "price": 220,
+        "image": "assets/banners/Image (2).png",
+        "badge": "NEW ARRIVAL",
+        "rating": 4.9,
+        "reviews": 128,
+        "colors": ["black", "red", "yellow"],
+        "category": "Elite Series"
+    },
+    {
+        "id": 2,
+        "name": "APEX VELOCITY",
+        "price": 250,
+        "image": "assets/banners/Image (3).png",
+        "badge": "LIMITED EDITION",
+        "rating": 4.8,
+        "reviews": 96,
+        "colors": ["white", "red"],
+        "category": "Elite Series"
+    },
+    {
+        "id": 3,
+        "name": "APEX CLOUD",
+        "price": 240,
+        "image": "assets/banners/Container (3).png",
+        "badge": "",
+        "rating": 4.9,
+        "reviews": 112,
+        "colors": ["black", "grey"],
+        "category": "Elite Series"
+    },
+    {
+        "id": 4,
+        "name": "APEX TERRAIN V2",
+        "price": 225,
+        "image": "assets/banners/Image (2).png",
+        "badge": "NEW",
+        "rating": 4.7,
+        "reviews": 84,
+        "colors": ["blue", "black"],
+        "category": "Performance"
+    },
+    {
+    "id": 5,
+    "name": "APEX PULSE X1",
+    "price": 250,
+    "image": "assets/images/Aura Cloud.png",
+    "badge": "BEST SELLER",
+    "rating": 4.8,
+    "reviews": 96,
+    "colors": ["red", "black"],
+    "category": "Performance"
+},
+{
+    "id": 6,
+    "name": "APEX AURA PRO",
+    "price": 295,
+    "image": "assets/images/Pulse React.png",
+    "badge": "LIMITED",
+    "rating": 4.9,
+    "reviews": 112,
+    "colors": ["yellow", "black"],
+    "category": "Elite Series"
+},
+{
+    "id": 7,
+    "name": "APEX VELOCITY V1",
+    "price": 275,
+    "image": "assets/images/Apex Terrain V2.png",
+    "badge": "NEW",
+    "rating": 4.6,
+    "reviews": 72,
+    "colors": ["blue", "red"],
+    "category": "Running"
+}
+    
+]
