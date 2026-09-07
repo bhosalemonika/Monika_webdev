@@ -1,80 +1,46 @@
 [
-    {
-        "id": 1,
-        "name": "APEX AURA",
-        "price": 220,
-        "image": "assets/banners/Image (2).png",
-        "badge": "NEW ARRIVAL",
-        "rating": 4.9,
-        "reviews": 128,
-        "colors": ["black", "red", "yellow"],
-        "category": "Elite Series"
-    },
-    {
-        "id": 2,
-        "name": "APEX VELOCITY",
-        "price": 250,
-        "image": "assets/banners/Image (3).png",
-        "badge": "LIMITED EDITION",
-        "rating": 4.8,
-        "reviews": 96,
-        "colors": ["white", "red"],
-        "category": "Elite Series"
-    },
-    {
-        "id": 3,
-        "name": "APEX CLOUD",
-        "price": 240,
-        "image": "assets/banners/Container (3).png",
-        "badge": "",
-        "rating": 4.9,
-        "reviews": 112,
-        "colors": ["black", "grey"],
-        "category": "Elite Series"
-    },
-    {
-        "id": 4,
-        "name": "APEX TERRAIN V2",
-        "price": 225,
-        "image": "assets/banners/Image (2).png",
-        "badge": "NEW",
-        "rating": 4.7,
-        "reviews": 84,
-        "colors": ["blue", "black"],
-        "category": "Performance"
-    },
-    {
-    "id": 5,
-    "name": "APEX PULSE X1",
-    "price": 250,
-    "image": "assets/images/Aura Cloud.png",
-    "badge": "BEST SELLER",
-    "rating": 4.8,
-    "reviews": 96,
-    "colors": ["red", "black"],
-    "category": "Performance"
-},
-{
-    "id": 6,
-    "name": "APEX AURA PRO",
-    "price": 295,
+  {
+    "id": 1,
+    "name": "HERITAGE X-90",
+    "category": "PERFORMANCE SERIES",
+    "price": 210,
+    "description": "A powerful performance shoe designed for comfort and everyday movement.",
+    "image": "assets/images/APEX ELITE Aurum Performance.png",
+    "rating": 4.5,
+    "reviews": 120,
+    "colors": ["black", "white"]
+  },
+  {
+    "id": 2,
+    "name": "PULSE REACT",
+    "category": "RUNNING SERIES",
+    "price": 195,
+    "description": "Lightweight running shoes with responsive cushioning and excellent comfort.",
     "image": "assets/images/Pulse React.png",
-    "badge": "LIMITED",
-    "rating": 4.9,
-    "reviews": 112,
-    "colors": ["yellow", "black"],
-    "category": "Elite Series"
-},
-{
-    "id": 7,
-    "name": "APEX VELOCITY V1",
-    "price": 275,
+    "rating": 4.7,
+    "reviews": 150,
+    "colors": ["red", "black"]
+  },
+  {
+    "id": 3,
+    "name": "AURA CLOUD",
+    "category": "COMFORT SERIES",
+    "price": 240,
+    "description": "Premium comfort shoes designed for everyday performance.",
+    "image": "assets/images/Aura Cloud.png",
+    "rating": 4.8,
+    "reviews": 180,
+    "colors": ["white", "blue"]
+  },
+  {
+    "id": 4,
+    "name": "APEX TERRAIN V2",
+    "category": "PRO TRIAL SERIES",
+    "price": 225,
+    "description": "Engineered for the most demanding landscapes with excellent traction on any surface.",
     "image": "assets/images/Apex Terrain V2.png",
-    "badge": "NEW",
-    "rating": 4.6,
-    "reviews": 72,
-    "colors": ["blue", "red"],
-    "category": "Running"
-}
-    
+    "rating": 4.9,
+    "reviews": 200,
+    "colors": ["black", "red"]
+  }
 ]

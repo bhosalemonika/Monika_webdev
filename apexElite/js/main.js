@@ -1,27 +1,43 @@
-function loadFile(file, id) {
+function loadFile(file, id, callback) {
+
+  let element = document.getElementById(id);
+
+  if (!element) {
+    return;
+  }
+
   fetch(file)
     .then((response) => response.text())
     .then((data) => {
-      document.getElementById(id).innerHTML = data;
+
+      element.innerHTML = data;
+
+      if (callback) {
+        callback();
+      }
+
     });
 }
 
 loadFile("navbar.html", "header");
 loadFile("footer.html", "footer");
-loadFile("home.html", "home");
 loadFile("cartNavbar.html", "nav");
 loadFile("cartFooter.html", "foot");
 
-let products = [];
 
+let products = [];
 fetch("product.json")
   .then((response) => response.json())
   .then((data) => {
+
     products = data;
 
-    showProducts();
+    loadFile("home.html", "home", showProducts);
     showAllProducts();
     showCart();
+    showProductDetails();
+    showRecommendedProducts();
+
   })
   .catch((error) => {
     console.log(error);
@@ -29,206 +45,187 @@ fetch("product.json")
 
 function showProducts() {
   let box = document.getElementById("featuredProducts");
-
   if (!box) return;
-
   box.innerHTML = products
     .slice(0, 3)
     .map((product) => createProduct(product))
     .join("");
 }
-
 function showAllProducts() {
   let box = document.getElementById("allProducts");
   if (!box) return;
-  box.innerHTML = products.map((product) => createProduct(product)).join("");
+  box.innerHTML = products
+    .map((product) => createProduct(product))
+    .join("");
 }
-
 function createProduct(product) {
   return `
-        <div class="product-card">
-            <div class="product-image">
-                <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                >
-                ${
-                  product.badge
-                    ? `
-                        <span class="badge">
-                            ${product.badge}
-                        </span>
-                    `
-                    : ""
-                }
+    <div class="product-card" onclick="viewProduct(${product.id})">
 
-            </div>
-            <div class="product-details">
-                <div class="product-top">
-                    <h3>${product.name}</h3>
-                    <span class="price">
-                        $${product.price}
-                    </span>
-                </div>
-                <div class="rating">
-                    ★ ${product.rating}
-                    (${product.reviews} reviews)
-                </div>
-                <div class="colors">
-                    ${product.colors
-                      .map(
-                        (color) => `
-                        <span class="color ${color}"></span>
-                    `,
-                      )
-                      .join("")}
+      <div class="product-image">
+        <img 
+          src="${product.image}" 
+          alt="${product.name}"
+        >
 
-                </div>
+        ${
+          product.badge
+            ? `<span class="badge">${product.badge}</span>`
+            : ""
+        }
+      </div>
 
-                <button
-                    class="add-to-bag"
-                    onclick="addToCart(${product.id})"
-                >
-                    ADD TO BAG
-                </button>
-            </div>
+      <div class="product-details">
+
+        <div class="product-top">
+          <h3>${product.name}</h3>
+
+          <span class="price">
+            $${product.price}
+          </span>
         </div>
 
-    `;
+        <div class="rating">
+          ★ ${product.rating}
+          (${product.reviews} reviews)
+        </div>
+
+        <div class="colors">
+          ${product.colors
+            .map(
+              (color) => `
+                <span class="color ${color}"></span>
+              `
+            )
+            .join("")}
+        </div>
+
+        <button
+          class="add-to-bag"
+          onclick="event.stopPropagation(); addToCart(${product.id})"
+        >
+          ADD TO BAG
+        </button>
+
+      </div>
+
+    </div>
+  `;
 }
 
 function addToCart(id) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  let item = cart.find((item) => item.id === id);
+  let cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
+
+  id = Number(id);
+
+  let item = cart.find(function(item) {
+    return Number(item.id) === id;
+  });
 
   if (item) {
+
     item.quantity++;
+
   } else {
+
     cart.push({
       id: id,
-      quantity: 1,
+      quantity: 1
     });
+
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+  );
 
   window.location.href = "cart.html";
 }
+function showProductDetails() {
 
-function showCart() {
-  let box = document.getElementById("products");
-  if (!box) return;
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let subtotal = 0;
-  box.innerHTML = cart
-    .map((item) => {
-      let product = products.find((product) => product.id === item.id);
-      if (!product) return "";
-      let price = product.price * item.quantity;
-      subtotal += price;
-      return `
-            <div class="item">
-                <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                >
-                <div class="info">
-                    <h3>
-                        ${product.name}
-                    </h3>
+  let productImage = document.getElementById("productImage");
+  let productCategory = document.getElementById("productCategory");
+  let productName = document.getElementById("productName");
+  let productPrice = document.getElementById("productPrice");
+  let productDescription = document.getElementById("productDescription");
+  let addProduct = document.getElementById("addProduct");
 
-                    <p>
-                        ${product.category}
-                    </p>
+  if (!productImage || !productCategory || !productName ||
+      !productPrice || !productDescription || !addProduct) {
+    return;
+  }
 
+  let id = new URLSearchParams(window.location.search).get("id");
 
-                    <div class="details">
+  if (!id) {
+    return;
+  }
 
-                        <div>
+  let product = products.find(function(product) {
+    return Number(product.id) === Number(id);
+  });
 
-                            <small>SIZE</small>
+  if (!product) {
+    console.log("Product not found for id:", id);
+    return;
+  }
 
-                            <b>10.5</b>
+  productImage.src = product.image;
+  productImage.alt = product.name;
 
-                        </div>
-                        <div>
-                            <small>QUANTITY</small>
-                            <b>
+  productCategory.textContent = product.category;
 
-                                <button class="bt-min"
-                                    onclick="changeQuantity(${product.id}, -1)"
-                                >
-                                    -
-                                </button>
+  productName.textContent = product.name;
 
-                                ${item.quantity}
+  productPrice.textContent =
+    "$" + Number(product.price).toFixed(2);
 
-                                <button class="bt-min"
-                                    onclick="changeQuantity(${product.id}, 1)"
-                                >
-                                    +
-                                </button>
+  productDescription.textContent =
+    product.description;
 
-                            </b>
+  addProduct.onclick = function() {
+    addToCart(product.id);
+  };
+}
+function viewProduct(id) {
+  window.location.href = "viewPage.html?id=" + id;
+}
 
-                        </div>
+function showRecommendedProducts() {
+    let box = document.getElementById("recommendedProducts");
+    if (!box) {
+        return;
+
+    box.innerHTML = products
+        .slice(0, 4)
+        .map(function(product) {
+
+            return `
+                <div class="card">
+
+                    <div onclick="viewProduct(${product.id})">
+
+                        <img
+                            src="${product.image}"
+                            alt="${product.name}"
+                        >
 
                     </div>
 
+                    <h4>
+                        ${product.name}
+                    </h4>
 
-                    <small
-                        class="remove"
-                        onclick="removeProduct(${product.id})"
-                    >
-                        Remove
-                    </small>
+                    <p>
+                        $${Number(product.price).toFixed(2)}
+                    </p>
 
                 </div>
+            `;
 
-                <strong>
-
-                    $${price.toFixed(2)}
-
-                </strong>
-
-            </div>
-
-        `;
-    })
-    .join("");
-  let tax = subtotal * 0.0824;
-
-  let total = subtotal + tax;
-  document.getElementById("subtotal").textContent = "$" + subtotal.toFixed(2);
-  document.getElementById("tax").textContent = "$" + tax.toFixed(2);
-  document.getElementById("total").textContent = "$" + total.toFixed(2);
-}
-
-function changeQuantity(id, change) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  let item = cart.find((item) => item.id === id);
-
-  if (!item) return;
-
-  item.quantity += change;
-
-  if (item.quantity <= 0) {
-    cart = cart.filter((item) => item.id !== id);
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  showCart();
-}
-
-function removeProduct(id) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  cart = cart.filter((item) => item.id !== id);
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  showCart();
+        })
+        .join("");
 }
