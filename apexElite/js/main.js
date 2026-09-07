@@ -1,21 +1,15 @@
 function loadFile(file, id, callback) {
-
   let element = document.getElementById(id);
-
   if (!element) {
     return;
   }
-
   fetch(file)
     .then((response) => response.text())
     .then((data) => {
-
       element.innerHTML = data;
-
       if (callback) {
         callback();
       }
-
     });
 }
 
@@ -24,17 +18,16 @@ loadFile("footer.html", "footer");
 loadFile("cartNavbar.html", "nav");
 loadFile("cartFooter.html", "foot");
 
-
 let products = [];
 fetch("product.json")
   .then((response) => response.json())
   .then((data) => {
-
     products = data;
-
     loadFile("home.html", "home", showProducts);
     showAllProducts();
-    showCart();
+    if (typeof showCart === "function") {
+      showCart();
+    }
     showProductDetails();
     showRecommendedProducts();
 
@@ -61,35 +54,28 @@ function showAllProducts() {
 function createProduct(product) {
   return `
     <div class="product-card" onclick="viewProduct(${product.id})">
-
       <div class="product-image">
         <img 
           src="${product.image}" 
           alt="${product.name}"
         >
-
         ${
           product.badge
             ? `<span class="badge">${product.badge}</span>`
             : ""
         }
       </div>
-
       <div class="product-details">
-
         <div class="product-top">
           <h3>${product.name}</h3>
-
           <span class="price">
             $${product.price}
           </span>
         </div>
-
         <div class="rating">
           ★ ${product.rating}
           (${product.reviews} reviews)
         </div>
-
         <div class="colors">
           ${product.colors
             .map(
@@ -196,24 +182,22 @@ function viewProduct(id) {
 
 function showRecommendedProducts() {
     let box = document.getElementById("recommendedProducts");
+
     if (!box) {
         return;
+    }
 
     box.innerHTML = products
         .slice(0, 4)
         .map(function(product) {
 
             return `
-                <div class="card">
+              <div class="card" onclick="viewProduct(${product.id})">
 
-                    <div onclick="viewProduct(${product.id})">
-
-                        <img
-                            src="${product.image}"
-                            alt="${product.name}"
-                        >
-
-                    </div>
+                <img
+                  src="${product.image}"
+                  alt="${product.name}"
+                >
 
                     <h4>
                         ${product.name}
