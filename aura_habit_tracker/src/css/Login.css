@@ -14,7 +14,7 @@
     radial-gradient(
       circle at top left,
       #0b4052,
-      transparent 35%
+      transparent 45%
     ),
     radial-gradient(
       circle at bottom right,
@@ -60,14 +60,10 @@
 .tabs span {
   width: 50%;
   text-align: center;
-
   padding-bottom: 10px;
-
   color: #a5b0bb;
   font-size: 16px;
-
   cursor: pointer;
-
   border-bottom: 2px solid transparent;
 }
 
@@ -80,8 +76,6 @@
   border-bottom: 2px solid #08d3f5;
 }
 
-/* LABEL */
-
 label {
   display: block;
   color: #aeb9c5;
@@ -89,28 +83,22 @@ label {
   margin-bottom: 5px;
 }
 
-/* INPUT */
 
 input {
   width: 100%;
   padding: 9px;
   margin-bottom: 12px;
-
   background: #101d35;
   border: 1px solid #263d5c;
   border-radius: 5px;
-
   color: white;
   outline: none;
-
   font-size: 15px;
 }
 
 input:focus {
   border-color: #08d3f5;
 }
-
-/* PASSWORD */
 
 .password-label {
   display: flex;
@@ -123,21 +111,16 @@ input:focus {
   text-decoration: none;
 }
 
-/* LOGIN BUTTON */
 
 .login-btn {
   width: 100%;
   padding: 10px;
   margin-top: 3px;
-
   border: none;
   border-radius: 5px;
-
   background: #08cbed;
   color: #06202b;
-
   font-size: 14px;
-
   cursor: pointer;
 }
 
@@ -145,7 +128,6 @@ input:focus {
   background: #13d5f5;
 }
 
-/* OR */
 
 .or {
   display: flex;
@@ -167,22 +149,16 @@ input:focus {
   font-size: 12px;
 }
 
-/* GOOGLE */
-
 .google-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   width: 100%;
   padding: 10px;
-
   background: #243247;
-
   border: none;
   border-radius: 5px;
-
   color: white;
 
   cursor: pointer;
