@@ -16,16 +16,14 @@ export const defaultHabits = [
 
 export function loadHabits() {
   try {
-    const savedHabits = JSON.parse(localStorage.getItem(HABITS_KEY));
-    if (Array.isArray(savedHabits) && savedHabits.length > 0) {
-      return savedHabits;
-    }
+    const saved = JSON.parse(localStorage.getItem(HABITS_KEY));
+    return Array.isArray(saved) && saved.length > 0 ? saved : defaultHabits;
   } catch {
     localStorage.removeItem(HABITS_KEY);
   }
+
   return defaultHabits;
 }
-
 
 export function saveHabits(habits) {
   localStorage.setItem(HABITS_KEY, JSON.stringify(habits));
@@ -51,6 +49,7 @@ export function upsertHabit(habits, habit) {
   if (!exists) {
     return [...habits, habit];
   }
+
   return habits.map((item) =>
     item.id === habit.id ? habit : item
   );
@@ -61,7 +60,8 @@ export function toggleHabit(habits, id) {
     if (habit.id !== id) {
       return habit;
     }
-  const completed = !habit.completed;
+
+    const completed = !habit.completed;
     return {
       ...habit,
       completed,

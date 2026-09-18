@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-  function handleGetStarted() {
-    navigate("/login");
-  }
+
   return (
     <div className="home">
       <img src={topGrid} className="top-grid" />
@@ -23,7 +21,7 @@ function Home() {
           Aura <span>Habit Tracker</span>
         </h1>
         <p>Build Better Habits Every Day</p>
-        <button onClick={handleGetStarted}>GET STARTED →</button>
+        <button onClick={() => navigate("/login")}>GET STARTED →</button>
       </div>
       <img src={bottomGrid} className="bottom-grid" />
     </div>

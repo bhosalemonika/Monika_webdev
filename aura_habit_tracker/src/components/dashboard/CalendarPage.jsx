@@ -1,7 +1,6 @@
 function CalendarPage({ habits }) {
   const scheduledHabits = [...habits].sort((first, second) =>
-    (first.reminderTime || "").localeCompare(second.reminderTime || "")
-  );
+    (first.reminderTime || "").localeCompare(second.reminderTime || ""));
   return (
     <section className="simple-page">
       <h1>Calendar</h1>

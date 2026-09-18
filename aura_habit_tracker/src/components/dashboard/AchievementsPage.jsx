@@ -1,14 +1,6 @@
 import StatCard from "./StatCard";
-
-function AchievementsPage({
-  completedCount,
-  longestStreak,
-  totalCount
-}) {
-  const progress = totalCount
-    ? Math.round((completedCount / totalCount) * 100)
-    : 0;
-
+function AchievementsPage({ completedCount, longestStreak, totalCount }) {
+  const progress = totalCount ? Math.round((completedCount / totalCount) * 100) : 0;
   return (
     <section className="simple-page">
       <h1>Achievements</h1>
@@ -22,7 +14,6 @@ function AchievementsPage({
     </section>
   );
 }
-
 export default AchievementsPage;
 
 

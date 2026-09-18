@@ -1,50 +1,38 @@
 import {
-  BadgeCheck,
   CheckCircle2,
-  Flame,
-  Pencil
+  Flame
 } from "lucide-react";
-import { habitIcons } from "./habitOptions";
+import { habitIcons } from "../../data/habitOptions";
 import pen from "../../assets/icons/pencil.png";
 import batch from "../../assets/icons/batch.png";
+
 function getCategoryClass(category) {
-  return category
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
+  return category.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
 }
 
-function HabitCard({
-  habit,
-  completeHabit,
-  openEditHabit
-}) {
+function HabitCard({ habit, completeHabit, openEditHabit }) {
   const habitName = habit.name;
   const categoryName = habit.category;
-  const habitIcon =
-    habitIcons.find((icon) => icon.id === habit.icon) ||
-    habitIcons[0];
+  const habitIcon = habitIcons.find((icon) => icon.id === habit.icon) || habitIcons[0];
   const isCompleted = Boolean(habit.completed);
 
   return (
     <div className={`habit-card ${isCompleted ? "is-completed" : ""}`}>
-      <div className="habit-card-top">
-        <div className="habit-card-icon">
+      <div className="habit-top">
+        <div className="habit-icon">
           <img
             src={habitIcon.src}
             alt=""
           />
         </div>
+
         <button
-          className="edit-button"
+          className="icon-button"
           type="button"
           aria-label={`Edit ${habitName}`}
           onClick={() => openEditHabit?.(habit)}
         >
-          <img
-            src={pen}
-            alt=""
-          />
+          <img src={pen} alt="" />
         </button>
       </div>
 
@@ -52,19 +40,11 @@ function HabitCard({
         {categoryName}
       </span>
 
-      <h2>
-        {habitName}
-      </h2>
+      <h2>{habitName}</h2>
 
       <div className="habit-streak">
-        <Flame
-          size={15}
-          strokeWidth={2.4}
-          aria-hidden="true"
-        />
-        <span>
-          {habit.streak || 0} days streak
-        </span>
+        <Flame size={15} strokeWidth={2.4} aria-hidden="true" />
+        <span>{habit.streak || 0} days streak</span>
       </div>
 
       <button
@@ -74,21 +54,12 @@ function HabitCard({
         onClick={() => completeHabit?.(habit.id)}
       >
         {isCompleted ? (
-         
-          <img 
-          src={batch}
-          />
+          <img src={batch} alt="" />
         ) : (
-          <CheckCircle2
-            size={19}
-            strokeWidth={2.5}
-            aria-hidden="true"
-          />
+          <CheckCircle2 size={19} strokeWidth={2.5} aria-hidden="true" />
         )}
 
-        <span>
-          {isCompleted ? "Done for Today" : "Complete"}
-        </span>
+        <span>{isCompleted ? "Done for Today" : "Complete"}</span>
       </button>
     </div>
   );

@@ -1,3 +1,4 @@
+
 import fitnessIcon from "../../assets/icons/fitness.svg";
 import studyIcon from "../../assets/icons/study.svg";
 import productivityIcon from "../../assets/icons/productivity.svg";
@@ -12,53 +13,27 @@ const goalIcons = {
   "Personal Growth": growthIcon
 };
 
-function OnboardingOptions({
-  step,
-  options,
-  selected,
-  saveAnswer,
-  answerKey
-}) {
+const habitDescriptions = {
+  "1-3": "Focused",
+  "4-6": "Balanced",
+  "7+": "Mastery"
+};
+
+function OnboardingOptions({ step, options, selected, saveAnswer, answerKey }) {
   return (
-    <div
-      className={`options ${
-        step === 0 ? "goal-options" : "habit-options"
-      }`}
-    >
-
+    <div className={`options ${step === 0 ? "goal-options" : "habit-options"}`}>
       {options.map((option) => (
-
         <button
           key={option}
           className={selected === option ? "selected" : ""}
-          onClick={() =>
-            saveAnswer(answerKey, option)
-          }
+          type="button"
+          onClick={() => saveAnswer(answerKey, option)}
         >
-
-          {step === 0 && (
-            <img
-              src={goalIcons[option]}
-              alt=""
-            />
-          )}
-
+          {step === 0 && <img src={goalIcons[option]} alt="" />}
           {option}
-
-          {step === 1 && (
-            <small>
-              {option === "1-3"
-                ? "Focused"
-                : option === "4-6"
-                ? "Balanced"
-                : "Mastery"}
-            </small>
-          )}
-
+          {step === 1 && <small>{habitDescriptions[option]}</small>}
         </button>
-
       ))}
-
     </div>
   );
 }

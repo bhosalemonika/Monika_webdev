@@ -12,10 +12,7 @@ const iconMap = {
   review: reviewIcon
 };
 
-function UpNext({
-  habits,
-  openCalendar
-}) {
+function UpNext({ habits, openCalendar }) {
   const upcoming = habits
     .filter((habit) => !habit.completed)
     .sort((first, second) =>
@@ -26,14 +23,8 @@ function UpNext({
   return (
     <div className="up-next">
       <div className="section-heading">
-        <h2>
-          Up Next
-        </h2>
-        <button
-          className="view-button"
-          type="button"
-          onClick={openCalendar}
-        >
+        <h2>Up Next</h2>
+        <button className="view-button" type="button" onClick={openCalendar}>
           View all
         </button>
       </div>
@@ -48,17 +39,10 @@ function UpNext({
       ) : (
         upcoming.map((habit) => (
           <div className="next-card" key={habit.id}>
-            <img
-              src={iconMap[habit.icon] || meditationIcon}
-              alt=""
-            />
+            <img src={iconMap[habit.icon] || meditationIcon} alt="" />
             <div>
-              <strong>
-                {habit.name}
-              </strong>
-              <small>
-                {habit.reminderTime || "Anytime today"}
-              </small>
+              <strong>{habit.name}</strong>
+              <small>{habit.reminderTime || "Anytime today"}</small>
             </div>
           </div>
         ))

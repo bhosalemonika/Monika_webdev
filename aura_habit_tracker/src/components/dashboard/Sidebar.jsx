@@ -33,23 +33,14 @@ const navItems = [
   }
 ];
 
-function Sidebar({
-  activePage,
-  openAddHabit,
-  openPage
-}) {
+function Sidebar({ activePage, openAddHabit, openPage }) {
   const isActive = (itemId) =>
     activePage === itemId ||
     (itemId === "my-habits" && activePage === "add-habit");
 
   return (
     <aside className="sidebar">
-
-      <button
-        className="new-habit-button"
-        type="button"
-        onClick={openAddHabit}
-      >
+      <button className="new-habit-button" type="button" onClick={openAddHabit}>
         <img src={addIcon} alt="" />
         <span>New Habit</span>
       </button>
@@ -67,7 +58,6 @@ function Sidebar({
           </button>
         ))}
       </nav>
-
     </aside>
   );
 }

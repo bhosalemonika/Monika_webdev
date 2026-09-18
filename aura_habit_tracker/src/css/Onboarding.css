@@ -11,12 +11,11 @@
     radial-gradient(circle at 18% 95%, rgba(5, 74, 94, 0.55), transparent 34%),
     radial-gradient(circle at 98% 0%, rgba(4, 69, 86, 0.42), transparent 30%),
     #061221;
-  border-top: 2px solid #08cbed;
   overflow: hidden;
 }
 
 .brand {
-  margin: 0;
+  margin-top: 10px;
   padding: 10px 12px;
   color: #13d5f5;
   font-size: 18px;

@@ -1,22 +1,15 @@
-import { categoryOptions } from "./habitOptions";
-function HabitsHeader({
-  category,
-  onCategoryChange
-}) {
+import { categoryOptions } from "../../data/habitOptions";
+
+function HabitsHeader({ category, onCategoryChange }) {
   return (
-    <div className="my-habits-header">
+    <div className="habits-header">
       <div>
-        <h1>
-          My Habits
-        </h1>
-        <p>
-          Manage your daily rituals and track your journey
-          towards consistent mastery.
-        </p>
+        <h1>My Habits</h1>
+        <p>Manage your daily rituals and track your journey towards consistent mastery.</p>
       </div>
 
       <select
-        className="category-filter"
+        className="filter-select"
         value={category}
         onChange={(event) => onCategoryChange(event.target.value)}
       >

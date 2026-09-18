@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "../css/Dashboard.css";
-
 import TopBar from "../components/dashboard/TopBar";
 import Sidebar from "../components/dashboard/Sidebar";
 import WelcomeSection from "../components/dashboard/WelcomeSection";
@@ -10,33 +9,22 @@ import QuoteCard from "../components/dashboard/QuoteCard";
 import CalendarPage from "../components/dashboard/CalendarPage";
 import AchievementsPage from "../components/dashboard/AchievementsPage";
 import ProfilePage from "../components/dashboard/ProfilePage";
-
 import AddHabit from "./AddHabit";
 import MyHabits from "./MyHabits";
-import {
-  loadHabits,
-  saveHabits,
-  toggleHabit,
-  upsertHabit
-} from "../data/habits";
+import { useHabits } from "../hooks/useHabits";
+import { readUser } from "../utils/userSession";
 
-function readUser() {
-  try {
-    return JSON.parse(localStorage.getItem("auraUser")) || {};
-  } catch {
-    return {};
-  }
-}
 
 function Dashboard() {
   const [activePage, setActivePage] = useState("home");
   const [editHabit, setEditHabit] = useState(null);
-  const [habits, setHabits] = useState(loadHabits);
-  const completedCount = habits.filter((habit) => habit.completed).length;
-  const longestStreak = habits.reduce(
-    (best, habit) => Math.max(best, habit.streak || 0),
-    0
-  );
+  const {
+    habits,
+    completeHabit,
+    saveHabit: persistHabit,
+    completedCount,
+    longestStreak
+  } = useHabits();
 
   const openPage = (page) => {
     setEditHabit(null);
@@ -53,22 +41,13 @@ function Dashboard() {
     setActivePage("add-habit");
   };
 
-  const completeHabit = (id) => {
-    setHabits((currentHabits) =>
-      saveHabits(toggleHabit(currentHabits, id))
-    );
-  };
-
   const saveHabit = (habit) => {
-    setHabits((currentHabits) =>
-      saveHabits(upsertHabit(currentHabits, habit))
-    );
+    persistHabit(habit);
     openPage("my-habits");
   };
 
   return (
     <div className="dashboard">
-
       <TopBar
         streak={longestStreak}
         openHome={() => openPage("home")}
@@ -101,7 +80,6 @@ function Dashboard() {
                   />
                   <QuoteCard />
                 </section>
-
               </div>
             </>
           )}
@@ -124,9 +102,7 @@ function Dashboard() {
             />
           )}
 
-          {activePage === "calendar" && (
-            <CalendarPage habits={habits} />
-          )}
+          {activePage === "calendar" && <CalendarPage habits={habits} />}
 
           {activePage === "achievements" && (
             <AchievementsPage
@@ -144,11 +120,8 @@ function Dashboard() {
               totalCount={habits.length}
             />
           )}
-
         </main>
-
       </div>
-
     </div>
   );
 }

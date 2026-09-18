@@ -7,7 +7,7 @@
   text-align: left;
 }
 
-.my-habits-header {
+.habits-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -15,16 +15,15 @@
   margin-bottom: 27px;
 }
 
-.my-habits-header h1 {
+.habits-header h1 {
   margin: 0 0 8px;
   color: #edf6fb;
   font-size: 30px;
   font-weight: 800;
   line-height: 1.15;
-  letter-spacing: 0;
 }
 
-.my-habits-header p {
+.habits-header p {
   margin: 0;
   max-width: 610px;
   color: #b9c6cf;
@@ -32,7 +31,7 @@
   line-height: 1.55;
 }
 
-.category-filter {
+.filter-select {
   padding: 9px 18px;
   border: 1px solid #29496d;
   border-radius: 22px;
@@ -41,65 +40,55 @@
   cursor: pointer;
 }
 
-.category-filter:focus {
+.filter-select:focus {
   outline: 2px solid #55d4f4;
   outline-offset: 2px;
 }
 
-.habits-grid {
+.habit-grid {
   width: 100%;
-  max-width: 884px;
+  max-width: 904px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
   align-items: stretch;
 }
 
-.my-habits-page .habit-card {
-  min-height: 265px;
+.habit-card {
+  min-height: 285px;
   box-sizing: border-box;
-  padding: 22px;
+  padding:9px;
   border: 1px solid #245079;
   border-radius: 8px;
-  background:
-    linear-gradient(145deg, rgba(20, 38, 60, 0.98), rgba(12, 24, 39, 0.98));
+  background: linear-gradient(145deg, rgba(20, 38, 60, 0.98), rgba(12, 24, 39, 0.98));
   color: #e8f1f7;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.04),
-    0 14px 28px rgba(0, 0, 0, 0.16);
-  transition:
-    border-color 160ms ease,
-    transform 160ms ease,
-    box-shadow 160ms ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 14px 28px rgba(0, 0, 0, 0.16);
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
 
-.my-habits-page .habit-card:hover {
+.habit-card:hover {
   border-color: #34a6d4;
   transform: translateY(-1px);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 18px 34px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 34px rgba(0, 0, 0, 0.2);
 }
 
-.my-habits-page .habit-card.is-completed {
+.habit-card.is-completed {
   border-color: #16bfe4;
-  background:
-    linear-gradient(145deg, rgba(18, 45, 60, 0.98), rgba(12, 31, 45, 0.98));
+  background: linear-gradient(145deg, rgba(18, 45, 60, 0.98), rgba(12, 31, 45, 0.98));
 }
 
-.habit-card-top {
+.habit-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.my-habits-page .habit-card-icon {
+.habit-icon {
   width: 44px;
   height: 44px;
-  flex: 0 0 44px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,13 +97,13 @@
   background: #20384d;
 }
 
-.my-habits-page .habit-card-icon img {
+.habit-icon img {
   width: 24px;
   height: 24px;
   object-fit: contain;
 }
 
-.my-habits-page .edit-button {
+.icon-button {
   width: 34px;
   height: 34px;
   display: inline-flex;
@@ -127,13 +116,13 @@
   cursor: pointer;
 }
 
-.my-habits-page .edit-button:hover,
-.my-habits-page .edit-button:focus-visible {
+.icon-button:hover,
+.icon-button:focus-visible {
   color: #16d4f3;
   background: rgba(22, 212, 243, 0.08);
 }
 
-.my-habits-page .category-badge {
+.category-badge {
   width: max-content;
   max-width: 100%;
   display: inline-block;
@@ -151,35 +140,34 @@
   overflow-wrap: anywhere;
 }
 
-.my-habits-page .category-mindset,
-.my-habits-page .category-wellness {
+.category-mindset,
+.category-wellness {
   border-color: rgba(239, 185, 70, 0.5);
   background: rgba(239, 185, 70, 0.12);
   color: #ffd470;
 }
 
-.my-habits-page .category-fitness {
+.category-fitness {
   border-color: rgba(136, 212, 255, 0.5);
   background: rgba(76, 157, 211, 0.14);
   color: #aee7ff;
 }
 
-.my-habits-page .category-productivity {
+.category-productivity {
   border-color: rgba(145, 216, 232, 0.52);
   background: rgba(145, 216, 232, 0.11);
   color: #bbf3ff;
 }
 
-.my-habits-page .habit-card h2 {
+.habit-card h2 {
   margin: 11px 0 0;
   color: #f0f6fb;
   font-size: 22px;
   font-weight: 750;
   line-height: 1.22;
-  letter-spacing: 0;
 }
 
-.my-habits-page .habit-streak {
+.habit-streak {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -189,12 +177,12 @@
   line-height: 1.35;
 }
 
-.my-habits-page .habit-streak svg {
+.habit-streak svg {
   flex: 0 0 auto;
   color: #8de3f6;
 }
 
-.my-habits-page .complete-button {
+.complete-button {
   width: 100%;
   min-height: 42px;
   margin-top: auto;
@@ -210,32 +198,29 @@
   font-weight: 800;
   line-height: 1;
   cursor: pointer;
-  transition:
-    border-color 160ms ease,
-    background 160ms ease,
-    color 160ms ease,
-    box-shadow 160ms ease;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
 }
 
-.my-habits-page .complete-button:hover,
-.my-habits-page .complete-button:focus-visible {
+.complete-button:hover,
+.complete-button:focus-visible {
   border-color: #16d4f3;
   background: #122840;
   color: #dbf8ff;
 }
 
-.my-habits-page .complete-button.done {
+.complete-button.done {
   background: linear-gradient(180deg, #18d9f4, #0fbfe3);
   border-color: #18d9f4;
   color: #06232d;
   box-shadow: 0 0 18px rgba(18, 199, 235, 0.32);
 }
 
-.my-habits-page .complete-button svg {
+.complete-button svg,
+.complete-button img {
   flex: 0 0 auto;
 }
 
-.add-habit-card {
+.add-card {
   min-height: 265px;
   padding: 22px;
   border: 2px dashed #263d46;
@@ -244,14 +229,11 @@
   color: #adb9c2;
   cursor: pointer;
   text-align: center;
-  transition:
-    border-color 160ms ease,
-    background 160ms ease,
-    color 160ms ease;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
 }
 
-.add-habit-card:hover,
-.add-habit-card:focus-visible {
+.add-card:hover,
+.add-card:focus-visible {
   border-color: #16d4f3;
   background: rgba(17, 36, 44, 0.72);
   color: #e2f4fb;
@@ -271,15 +253,14 @@
   line-height: 1;
 }
 
-.add-habit-card h2 {
+.add-card h2 {
   margin: 0 0 5px;
   color: inherit;
   font-size: 20px;
   font-weight: 750;
-  letter-spacing: 0;
 }
 
-.add-habit-card p {
+.add-card p {
   margin: 0;
   color: #7e8a93;
   font-size: 12px;
@@ -291,20 +272,20 @@
     padding: 24px 20px 30px;
   }
 
-  .my-habits-header {
+  .habits-header {
     flex-direction: column;
   }
 
-  .category-filter {
+  .filter-select {
     width: 100%;
   }
 
-  .habits-grid {
+  .habit-grid {
     grid-template-columns: 1fr;
   }
 
-  .my-habits-page .habit-card,
-  .add-habit-card {
-    min-height: 238px;
+  .habit-card,
+  .add-card {
+    min-height: 268px;
   }
 }

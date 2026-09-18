@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  padding: 0 16px;
+}
+
+header {
+  background: #f5ba13;
+  margin: 0 -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-area {
+  width: 480px;
+  max-width: 90%;
+  margin: 30px auto;
+}
+
+.create-area form {
+  position: relative;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+.create-area input,
+.create-area textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  font-size: 1.1em;
+  padding: 8px;
+}
+
+.create-area input {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.create-area textarea {
+  min-height: 40px;
+}
+
+.create-area .MuiFab-root {
+  position: absolute;
+  right: 18px;
+  bottom: -25px;
+  background-color: #f5ba13;
+  color: white;
+}
+
+.create-area .MuiFab-root:hover {
+  background-color: #e0a900;
+}
+
+.note {
+  background: #fff;
+  width: 240px;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.note h1 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.note p {
+  font-size: 1em;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note button {
+  border: none;
+  background: transparent;
+  color: #f5ba13;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.note button:hover {
+  color: #d89f00;
+}
+
+@media (max-width: 600px) {
+  .create-area {
+    width: 90%;
+  }
+
+  .note {
+    width: calc(100% - 32px);
+  }
+}

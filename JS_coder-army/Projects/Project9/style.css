@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(245, 224, 227);
+}
+.para{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: rgb(227, 152, 233);
+    width: 700px;
+}
+input{
+    height: 50;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#bt{
+    height: 50;
+    width: 150px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: rgb(87, 164, 219);
+    font-size: 17px;
+    color: white;
+    font-weight: 600;
+}

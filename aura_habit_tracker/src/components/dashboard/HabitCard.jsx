@@ -24,7 +24,7 @@ function HabitCard({
     : habit.reminderTime || habit.frequency;
 
   return (
-    <div className="habit-card">
+    <div className={`habit-card ${habit.completed ? "completed" : ""}`}>
       <div className="habit-icon">
         <img
           src={iconMap[habit.icon] || meditationIcon}

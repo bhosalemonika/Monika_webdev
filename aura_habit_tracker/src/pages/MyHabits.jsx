@@ -1,13 +1,9 @@
 import { useState } from "react";
 import "../css/MyHabits.css";
 
-import {
-  loadHabits,
-  saveHabits,
-  toggleHabit
-} from "../data/habits";
 import HabitsHeader from "../components/habits/HabitsHeader";
 import HabitGrid from "../components/habits/HabitGrid";
+import { useHabits } from "../hooks/useHabits";
 
 function MyHabits({
   habits: providedHabits,
@@ -15,18 +11,12 @@ function MyHabits({
   openAddHabit,
   openEditHabit
 }) {
-  const [localHabits, setLocalHabits] = useState(loadHabits);
+  const reduxHabits = useHabits();
   const [category, setCategory] = useState("All");
-  const habits = providedHabits ?? localHabits;
+  const habits = providedHabits ?? reduxHabits.habits;
 
   const handleCompleteHabit = (id) => {
-    if (completeHabit) {
-      completeHabit(id);
-      return;
-    }
-    setLocalHabits((currentHabits) =>
-      saveHabits(toggleHabit(currentHabits, id))
-    );
+    (completeHabit ?? reduxHabits.completeHabit)(id);
   };
 
   const filteredHabits = category === "All"
@@ -48,4 +38,5 @@ function MyHabits({
     </div>
   );
 }
+
 export default MyHabits;

@@ -1,23 +1,23 @@
-.add-habit-page {
+.habit-page {
   width: 100%;
   min-height: 100%;
   padding: 30px 6%;
   box-sizing: border-box;
 }
 
-.add-habit-title {
+.page-header {
   text-align: center;
   margin-bottom: 28px;
 }
 
-.add-habit-title h1 {
+.page-header h1 {
   margin: 0 0 8px;
   font-size: 34px;
   font-weight: 700;
   color: #e0e5e9;
 }
 
-.add-habit-title p {
+.page-header p {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
@@ -35,19 +35,19 @@
   border-radius: 11px;
 }
 
-.form-group {
+.field {
   display: flex;
   flex-direction: column;
   flex: 1;
   min-width: 0;
 }
 
-.full-width {
+.field-full {
   width: 100%;
   margin-bottom: 24px;
 }
 
-.form-group label {
+.field label {
   margin-bottom: 9px;
   font-size: 11px;
   font-weight: 700;
@@ -55,9 +55,9 @@
   color: #a8d8ed;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.field input,
+.field select,
+.field textarea {
   width: 100%;
   box-sizing: border-box;
   background: #151e28;
@@ -70,34 +70,34 @@
   font-family: inherit;
 }
 
-.form-group input {
+.field input {
   height: 41px;
 }
 
-.form-group textarea {
+.field textarea {
   height: 82px;
   resize: vertical;
   min-height: 82px;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
   border-color: #4acff0;
 }
 
-.form-group select {
+.field select {
   height: 41px;
   cursor: pointer;
 }
 
-.form-row {
+.field-row {
   display: flex;
   gap: 25px;
   margin-bottom: 25px;
 }
 
-.frequency-buttons {
+.segmented-options {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -105,7 +105,7 @@
   min-height: 41px;
 }
 
-.frequency {
+.segment {
   padding: 7px 15px;
   border: 1px solid #293b4c;
   border-radius: 18px;
@@ -117,19 +117,19 @@
   transition: 0.2s ease;
 }
 
-.frequency:hover {
+.segment:hover {
   border-color: #4acff0;
   color: #bcefff;
 }
 
-.active-frequency {
+.segment.active {
   border-color: #6eddfb;
   color: #bcefff;
   background: #193343;
   box-shadow: 0 0 12px rgba(54, 204, 242, 0.2);
 }
 
-.icon-selection {
+.icon-picker {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -142,7 +142,7 @@
   background: #151f29;
 }
 
-.anchor-icon {
+.icon-option {
   width: 35px;
   height: 35px;
   flex: 0 0 35px;
@@ -156,17 +156,17 @@
   transition: 0.2s ease;
 }
 
-.anchor-icon:hover {
+.icon-option:hover {
   border-color: #4acff0;
 }
 
-.anchor-icon img {
+.icon-option img {
   width: 19px;
   height: 19px;
   object-fit: contain;
 }
 
-.anchor-icon.selected {
+.icon-option.selected {
   border-color: #6eddfb;
   box-shadow: 0 0 13px rgba(54, 204, 242, 0.3);
 }
@@ -179,7 +179,7 @@
   margin-top: 37px;
 }
 
-.cancel-button {
+.secondary-btn {
   border: none;
   background: transparent;
   color: #b3bdc5;
@@ -187,11 +187,11 @@
   cursor: pointer;
 }
 
-.cancel-button:hover {
+.secondary-btn:hover {
   color: #ffffff;
 }
 
-.save-button {
+.primary-btn {
   min-width: 135px;
   height: 40px;
   padding: 0 18px;
@@ -205,12 +205,12 @@
   transition: 0.2s ease;
 }
 
-.save-button:hover {
+.primary-btn:hover {
   background: #25d2f2;
 }
 
 @media (max-width: 900px) {
-  .add-habit-page {
+  .habit-page {
     padding: 28px 30px;
   }
 
@@ -219,30 +219,29 @@
     padding: 32px 28px 28px;
   }
 
-  .add-habit-title h1 {
+  .page-header h1 {
     font-size: 30px;
   }
 
-  .form-row {
+  .field-row {
     gap: 18px;
   }
 }
 
-/* Mobile */
 @media (max-width: 650px) {
-  .add-habit-page {
+  .habit-page {
     padding: 24px 16px;
   }
 
-  .add-habit-title {
+  .page-header {
     margin-bottom: 22px;
   }
 
-  .add-habit-title h1 {
+  .page-header h1 {
     font-size: 26px;
   }
 
-  .add-habit-title p {
+  .page-header p {
     font-size: 13px;
     padding: 0 10px;
   }
@@ -252,25 +251,25 @@
     border-radius: 10px;
   }
 
-  .form-row {
+  .field-row {
     flex-direction: column;
     gap: 20px;
     margin-bottom: 22px;
   }
 
-  .full-width {
+  .field-full {
     margin-bottom: 22px;
   }
 
-  .frequency-buttons {
+  .segmented-options {
     min-height: auto;
   }
 
-  .frequency {
+  .segment {
     padding: 8px 14px;
   }
 
-  .icon-selection {
+  .icon-picker {
     gap: 9px;
     padding: 9px;
     min-height: 58px;
@@ -282,21 +281,21 @@
     margin-top: 30px;
   }
 
-  .save-button {
+  .primary-btn {
     min-width: 125px;
   }
 }
 
 @media (max-width: 400px) {
-  .add-habit-page {
+  .habit-page {
     padding: 20px 10px;
   }
 
-  .add-habit-title h1 {
+  .page-header h1 {
     font-size: 23px;
   }
 
-  .add-habit-title p {
+  .page-header p {
     font-size: 12px;
   }
 
@@ -304,31 +303,18 @@
     padding: 22px 14px 20px;
   }
 
-  .form-group label {
+  .field label {
     font-size: 10px;
   }
 
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+  .field input,
+  .field select,
+  .field textarea {
     font-size: 13px;
   }
 
-  .frequency {
+  .segment {
     padding: 7px 11px;
     font-size: 10px;
-  }
-
-  .form-actions {
-    gap: 15px;
-  }
-
-  .cancel-button {
-    font-size: 13px;
-  }
-
-  .save-button {
-    min-width: 115px;
-    font-size: 12px;
   }
 }
