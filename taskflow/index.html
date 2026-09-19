@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="TaskFlow home"
+        ><img src="assets/logo.png" alt="" /><span
+          ><strong>TaskFlow</strong><small>Stay Productive</small></span
+        ></a
+      >
+      <div class="top-actions">
+        <button
+          class="icon-button notification"
+          type="button"
+          aria-label="Notifications"
+        >
+          <img src="assets/notifications.png" alt="" /></button
+        ><button class="icon-button" type="button" aria-label="Settings">
+          <img src="assets/settings.png" alt="" /></button
+        ><img
+          class="avatar"
+          src="assets/profile (2).png"
+          alt="John's profile"
+        />
+      </div>
+    </header>
+    <main class="page-shell">
+      <section class="page-heading">
+        <div>
+          <h1>Good Morning, John <span aria-hidden="true">&#128075;</span></h1>
+          <p>Here's a snapshot of your workspace today.</p>
+        </div>
+        <div class="heading-actions">
+          <span class="date-pill"
+            ><img src="assets/calendar_.png" alt="" />Jun 24, 2026</span
+          ><button
+            class="primary-button heading-button"
+            id="header-add"
+            type="button"
+          >
+            New Task
+          </button>
+        </div>
+      </section>
+
+
+      
+      <section
+        id="empty-state"
+        class="empty-state"
+        aria-labelledby="empty-title"
+      >
+        <h2 id="empty-title">
+          No tasks available. Create<br />your first task.
+        </h2>
+        <p>
+          Your workspace is currently clean and quiet. Get started<br
+            class="desktop-only"
+          />
+          by adding a task to organize your day and boost your<br
+            class="desktop-only"
+          />
+          productivity.
+        </p>
+        <button class="primary-button" id="empty-add" type="button">
+          <span aria-hidden="true">&#8853;</span> Add New Task
+        </button>
+      </section>
+      <section id="dashboard" class="dashboard" hidden>
+        <div class="stats" aria-label="Task summary">
+          <article class="stat-card">
+            <div>
+              <p>Total Tasks</p>
+              <strong id="total-count">0</strong>
+            </div>
+            <span class="stat-icon blue"
+              ><img src="assets/notes.png" alt=""
+            /></span>
+          </article>
+          <article class="stat-card">
+            <div>
+              <p>Pending Tasks</p>
+              <strong id="pending-count">0</strong>
+            </div>
+            <span class="stat-icon orange"
+              ><img src="assets/pending.png" alt=""
+            /></span>
+          </article>
+          <article class="stat-card">
+            <div>
+              <p>Completed Tasks</p>
+              <strong id="completed-count">0</strong>
+            </div>
+            <span class="stat-icon green"
+              ><img src="assets/complete.png" alt=""
+            /></span>
+          </article>
+        </div>
+        <h2 class="section-title">Active Tasks</h2>
+        <div id="task-list" class="task-list"></div>
+      </section>
+    </main>
+    <div class="modal-backdrop" id="task-modal" hidden>
+      <form class="modal" id="task-form">
+        <div class="modal-heading">
+          <div>
+            <p class="eyebrow">Workspace</p>
+            <h2 id="modal-title">Create a task</h2>
+          </div>
+          <button
+            class="close-button"
+            id="close-modal"
+            type="button"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
+        <label for="task-title">Task title</label
+        ><input
+          id="task-title"
+          name="title"
+          type="text"
+          placeholder="e.g. Plan the next sprint"
+          required
+          maxlength="80"
+        /><label for="task-description">Description</label
+        ><textarea
+          id="task-description"
+          name="description"
+          rows="3"
+          placeholder="What needs to be done?"
+          maxlength="180"
+        ></textarea><label for="task-due-date">Due Date</label
+        ><input id="task-due-date" name="dueDate" type="date" required />
+        <div class="modal-actions">
+          <button class="secondary-button" id="cancel-modal" type="button">
+            Cancel</button
+          ><button class="primary-button" type="submit">Save Task</button>
+        </div>
+      </form>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
